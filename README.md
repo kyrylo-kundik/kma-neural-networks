@@ -29,3 +29,9 @@ pip install -r requirements.txt
 
 ### Utils
 [Jupyter kernel from venv](https://janakiev.com/blog/jupyter-virtual-envs/)
+
+### Practicals additional materials
+- [Torch tutorials](https://pytorch.org/tutorials/)
+- [Fusing BatchNorm and Convolutions for inference](https://nenadmarkus.com/p/fusing-batchnorm-and-conv/)
+- [Fusing BatchNorm and Convolutions for training](https://pytorch.org/tutorials/intermediate/custom_function_conv_bn_tutorial.html)
+- [Continual AI](https://www.continualai.org)
