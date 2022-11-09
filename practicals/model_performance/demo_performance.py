@@ -26,10 +26,12 @@ def measure(iterations=10, init_iterations=2, batch_size=4, use_jit=True, use_ha
 
     model = model.eval().requires_grad_(False).to(dtype).to(device)
     if use_jit:
+        # you can read about JIT here https://towardsdatascience.com/pytorch-jit-and-torchscript-c2a77bac0fff
         mock_tensor = torch.randn((batch_size, 3, image_size, image_size)).to(dtype).to(device)
         model = torch.jit.trace(model, mock_tensor)
 
     memory_after_init = GPUtil.getGPUs()[0].memoryUsed
+    # synchronizes CPU and GPU threads https://auro-227.medium.com/timing-your-pytorch-code-fragments-e1a556e81f2
     torch.cuda.synchronize(device)
 
     frames = torch.randn((batch_size * iterations, 3, image_size, image_size)).to(dtype)
