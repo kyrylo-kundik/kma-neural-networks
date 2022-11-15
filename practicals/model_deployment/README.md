@@ -14,7 +14,6 @@ pip install -r requirements.txt
 ```console
 python demo.py
 ```
-
 Results will be saved in `output` folder
 
 3. Create model `.mar` file
@@ -29,7 +28,7 @@ torch-model-archiver -f --model-name faceparser \
 4. Start TorchServe
 
 ```console
-torchserve --start --model-store model_store --models memetxt.mar --ncs
+torchserve --start --model-store model_store --models faceparser.mar --ncs
 ```
 
 5. Run request
